@@ -15,7 +15,7 @@ header {
   position: relative;
   height: 88vh;
   max-height: 88vh;
-  overflow-x: hidden;
+  overflow: hidden;
   padding-top: 30px;
 }
 
@@ -192,6 +192,7 @@ nav .socialmedia a img {
   width: 100%;
   top: 20%;
   left: 0;
+  font-weight: normal;
 }
 
 .title p:nth-child(1) {
@@ -240,4 +241,97 @@ img.kleks {
   height: 100%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+section.offerts {
+  height: 120vh;
+}
+
+.heading {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-family: 'Poiret One', cursive;
+  font-size: 60px;
+  text-align: center;
+}
+
+.heading p {
+  text-shadow: 0px 0px 0px #212529;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.heading span {
+  font-size: 90px;
+}
+
+.offerts p.info {
+  padding-left: 70px;
+  padding-right: 60px;
+  font-size: 24px;
+  letter-spacing: 3px;
+  line-height: 1.4;
+}
+
+.offerts p.info span {
+  font-weight: bold;
+}
+
+.offer {
+  position: relative;
+  margin-top: 100px;
+  height: 70vh;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: 2px solid #E19190;
+  border-radius: 5%;
+}
+
+.offerimg {
+  height: 30%;
+  margin-top: 60px;
+}
+
+.offerimg img {
+  width: 100%;
+}
+
+.offer h2 {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 65px;
+  letter-spacing: 2px;
+}
+
+.offer .description {
+  position: absolute;
+  top: 65%;
+  left: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 24px;
+  letter-spacing: 3px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.offer .arrow-right {
+  position: absolute;
+  top: 51%;
+  right: 5%;
+  width: 7vw;
+  height: 7vw;
+  transform: rotate(180deg);
+}
+
+.offer .arrow-left {
+  position: absolute;
+  top: 51%;
+  left: 5%;
+  width: 7vw;
+  height: 7vw;
 }

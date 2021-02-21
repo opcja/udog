@@ -28,9 +28,10 @@ html(lang='pl')
     link(rel='stylesheet', href='/stylesheets/variables.css')
     link(rel='stylesheet', href='/stylesheets/index.css')
     link(rel="preconnect" href="https://fonts.gstatic.com")
-    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap", rel="stylesheet")    
+    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap", rel="stylesheet")    
     link(href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap", rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poiret+One&display=swap", rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet")
   body 
     main
       header 
@@ -63,13 +64,27 @@ html(lang='pl')
                   img(src="images/instagram.svg", alt="instagram") 
                 a.youtube(href="")
                   img(src="images/youtube.svg", alt="youtube")    
-        .title 
+        h1.title 
           p='Psie treningi'
           p='i konsultacje'
         .wrap 
           img.kleks(src="images/kleks.png", alt="")
           .dzik
-            img(src="images/mniejszydzik.png" alt="dzik")             
+            img(src="images/mniejszydzik.png" alt="dzik")   
+      section.offerts
+        .heading 
+          p Problem #[span z psem] czy<br />#[span pies z] problemami?  
+        p.info Proponujemy Wam treningi dla psów dorosłych oraz szczeniąt. Uczymy zachowań pożądanych, socjalizujemy, pracujemy nad opanowaniem emocji, rozwiązujemy problemy behawioralne.<br />#[span Zapraszamy do zapoznania się z ofertą:]
+        .offer
+          .offerimg
+            img(src="images/indywidualne.png", alt="Zajęcia indywidualne")
+          h2='Zajęcia indywidualne'
+          .description 
+            p Piesek sobie trenuje sam, żeby go niczym nie rozpraszać i skupić całą uwagę trenera na jego problemach. Piesek sobie trenuje sam, żeby go niczym nie rozpraszać i skupić całą uwagę trenera na jego problemach.
+          .arrow-right
+            img(src="images/arrow.png", alt="Następna zakładka")
+          .arrow-left  
+            img(src="images/arrow.png", alt="Poprzednia zakładka")
     script(src="javascripts/index.js") 
     
   
