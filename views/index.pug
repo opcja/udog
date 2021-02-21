@@ -28,8 +28,9 @@ html(lang='pl')
     link(rel='stylesheet', href='/stylesheets/variables.css')
     link(rel='stylesheet', href='/stylesheets/index.css')
     link(rel="preconnect" href="https://fonts.gstatic.com")
-    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap", rel="stylesheet")
-    script(src="https://kit.fontawesome.com/f338328918.js", crossorigin="anonymous")
+    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap", rel="stylesheet")    
+    link(href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap", rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poiret+One&display=swap", rel="stylesheet")
   body 
     main
       header 
@@ -37,16 +38,38 @@ html(lang='pl')
           a(href='https://udog.pl')  
           img(src="images/logo-mobile.png", alt="Strona główna") 
         .hamburger 
-          <i class="fas fa-bars"></i>
-        nav 
+          span
+          span
+          span
+        nav             
           ul                    
             li 
-              a(href='#')='Oferta'
+              a(href='#')
+                span='Oferta'
             li 
-              a(href='#')='Blog'
+              a(href='#')
+                span='Blog'
             li  
-              a(href='#')='O nas'
+              a(href='#')
+                span='O nas'
             li 
-              a(href='#')='Kontakt'
-
+              a(href='#')
+                span='Kontakt'
+            .footer
+              .socialmedia  
+                a.facebook(href="https://www.facebook.com/Uszy-Do-G%C3%B3ry-Psie-treningi-i-konsultacje-112340950466891")
+                  img(src="images/facebook.svg", alt="facebook")    
+                a.instagram(href="https://www.instagram.com/uszy.dogory/")
+                  img(src="images/instagram.svg", alt="instagram") 
+                a.youtube(href="")
+                  img(src="images/youtube.svg", alt="youtube")    
+        .title 
+          p='Psie treningi'
+          p='i konsultacje'
+        .wrap 
+          img.kleks(src="images/kleks.png", alt="")
+          .dzik
+            img(src="images/mniejszydzik.png" alt="dzik")             
+    script(src="javascripts/index.js") 
+    
   
