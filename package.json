@@ -11,6 +11,7 @@
     "express": "^4.16.4",
     "http-errors": "~1.6.3",
     "jade": "^1.11.0",
+    "mongoose": "^5.11.15",
     "morgan": "~1.9.1",
     "pug": "^2.0.0-beta11"
   },
@@ -18,5 +19,13 @@
   "devDependencies": {},
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opcja/udog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opcja/udog/issues"
+  },
+  "homepage": "https://github.com/opcja/udog#readme",
   "description": ""
 }

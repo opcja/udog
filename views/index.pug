@@ -1,6 +1,6 @@
 doctype html
 html(lang='pl')
-  head    	  
+  head
     link(rel="shortcut icon", href="/favicon.ico")
     link(rel="icon", sizes="16x16 32x32 64x64", href="/favicon.ico")
     link(rel="icon", type="image/png", sizes="196x196", href="/favicon-192.png")
@@ -11,7 +11,6 @@ html(lang='pl')
     link(rel="icon", type="image/png", sizes="16x16", href="/favicon-16.png")
     link(rel="apple-touch-icon", href="/favicon-57.png")
     link(rel="apple-touch-icon", sizes="114x114", href="/favicon-114.png")
-    link(rel="apple-touch-icon", sizes="72x72", href="/favicon-72.png")
     link(rel="apple-touch-icon", sizes="144x144", href="/favicon-144.png")
     link(rel="apple-touch-icon", sizes="60x60", href="/favicon-60.png")
     link(rel="apple-touch-icon", sizes="120x120", href="/favicon-120.png")
@@ -25,8 +24,8 @@ html(lang='pl')
     meta(name="keywords", content="psi trener wałcz, psie trenerki wałcz, psie komendy, psi trener")
     meta(name="author", content="Piotr Majda")
     title= title
-    link(rel='stylesheet', href='/stylesheets/variables.css')
-    link(rel='stylesheet', href='/stylesheets/index.css')
+    link(rel='stylesheet', href='stylesheets/variables.css')
+    link(rel='stylesheet', href='stylesheets/index.css')
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap", rel="stylesheet")    
     link(href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap", rel="stylesheet")
@@ -71,20 +70,22 @@ html(lang='pl')
           img.kleks(src="images/kleks.png", alt="")
           .dzik
             img(src="images/mniejszydzik.png" alt="dzik")   
-      section.offerts
+      section.offers
         .heading 
           p Problem #[span z psem] czy<br />#[span pies z] problemami?  
         p.info Proponujemy Wam treningi dla psów dorosłych oraz szczeniąt. Uczymy zachowań pożądanych, socjalizujemy, pracujemy nad opanowaniem emocji, rozwiązujemy problemy behawioralne.<br />#[span Zapraszamy do zapoznania się z ofertą:]
-        .offer
-          .offerimg
-            img(src="images/indywidualne.png", alt="Zajęcia indywidualne")
-          h2='Zajęcia indywidualne'
-          .description 
-            p Piesek sobie trenuje sam, żeby go niczym nie rozpraszać i skupić całą uwagę trenera na jego problemach. Piesek sobie trenuje sam, żeby go niczym nie rozpraszać i skupić całą uwagę trenera na jego problemach.
-          .arrow-right
-            img(src="images/arrow.png", alt="Następna zakładka")
-          .arrow-left  
-            img(src="images/arrow.png", alt="Poprzednia zakładka")
-    script(src="javascripts/index.js") 
+        each item in data
+          .offer
+            .offerimg
+              img(src=item.imageURL, alt=item.title)
+            h2=item.title
+            .description 
+              p=item.description
+        .arrow-right
+              img(src="images/arrow.png", alt="Następna zakładka")
+        .arrow-left  
+              img(src="images/arrow.png", alt="Poprzednia zakładka")
+    script(src="javascripts/hamburger.js")
+    script(src="javascripts/offers.js")
     
   

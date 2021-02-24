@@ -6,6 +6,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var debug = require('debug')('test:server');
 var http = require('http');
+var config = require('./config');
+const mongoose = require('mongoose');
+
+mongoose.connect(config.db, {useNewUrlParser: true, useUnifiedTopology: true});
 
 var indexRouter = require('./routes/index');
 
