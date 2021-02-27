@@ -10,6 +10,10 @@ var config = require('./config');
 const mongoose = require('mongoose');
 
 mongoose.connect(config.db, {useNewUrlParser: true, useUnifiedTopology: true});
+// const Cat = mongoose.model('Cat', { name: String });
+
+// const kitty = new Cat({ name: 'Zildjian' });
+// kitty.save().then(() => console.log('meow'));
 
 var indexRouter = require('./routes/index');
 

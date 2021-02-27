@@ -74,7 +74,7 @@ html(lang='pl')
         .heading 
           p Problem #[span z psem] czy<br />#[span pies z] problemami?  
         p.info Proponujemy Wam treningi dla psów dorosłych oraz szczeniąt. Uczymy zachowań pożądanych, socjalizujemy, pracujemy nad opanowaniem emocji, rozwiązujemy problemy behawioralne.<br />#[span Zapraszamy do zapoznania się z ofertą:]
-        each item in data
+        each item in offerData
           .offer
             .offerimg
               img(src=item.imageURL, alt=item.title)
@@ -84,7 +84,20 @@ html(lang='pl')
         .arrow-right
               img(src="images/arrow.png", alt="Następna zakładka")
         .arrow-left  
-              img(src="images/arrow.png", alt="Poprzednia zakładka")
+              img(src="images/arrow.png", alt="Poprzednia zakładka")            
+      section.blog   
+        .rounding-glog        
+        h2.title='Blog'
+        each dbarticle in articleData
+          article   
+            img(src=dbarticle.imgURL, alt=dbarticle.title)
+            p.date=dbarticle.created
+            h3=dbarticle.title
+            .summary
+              p=dbarticle.summary
+            .author   
+              p=dbarticle.author 
+            button='Czytaj więcej >'
     script(src="javascripts/hamburger.js")
     script(src="javascripts/offers.js")
     

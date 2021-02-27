@@ -12,5 +12,4 @@ const showNavigation = () => {
   }
 }
 
-
 hamburger.addEventListener('click', showNavigation);
