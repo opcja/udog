@@ -37,7 +37,7 @@ html(lang='pl')
         .logo   
           a(href='https://udog.pl')  
           img(src="images/logo-mobile.png", alt="Strona główna") 
-        .hamburger 
+        button.hamburger 
           span
           span
           span
@@ -85,19 +85,41 @@ html(lang='pl')
               img(src="images/arrow.png", alt="Następna zakładka")
         .arrow-left  
               img(src="images/arrow.png", alt="Poprzednia zakładka")            
-      section.blog   
-        .rounding-glog        
+      section.blog               
         h2.title='Blog'
         each dbarticle in articleData
           article   
-            img(src=dbarticle.imgURL, alt=dbarticle.title)
-            p.date=dbarticle.created
+            img(src=dbarticle.imageURL[0], alt=dbarticle.title)
+            .author   
+              p=dbarticle.author 
+            p.date=`${dbarticle.created.getDate()}.${dbarticle.created.getMonth() < 10 ? "0" + dbarticle.created.getMonth() : dbarticle.created.getMonth()}.${dbarticle.created.getFullYear()}`
             h3=dbarticle.title
             .summary
               p=dbarticle.summary
-            .author   
-              p=dbarticle.author 
             button='Czytaj więcej >'
+      section.about 
+        h2.title='O nas' 
+        p.description='Duet Uszy do góry tworzą:'
+        .portret
+          img(src="images/aboutada.jpg", alt="Ada i Dzik")
+        p.name='ada'
+        .portret
+          img(src="images/aboutdominika.jpg", alt="Ada i Dzik")
+        p.name='dominika'
+      section.contact
+        h2='Kontakt'
+        .details
+          div 
+            img(src="images/phone.png", alt="numer telefonu")
+            p.name='Ada'
+            <a href="tel:+48733863222">733-863-222</a>
+          div
+            img(src="images/phone.png", alt="numer telefonu")
+            p.name='Dominika'
+            <a href="tel:+48733863666">666-863-666</a>
+          div
+            img(src="images/email.png", alt="adres e-mail")
+            p.email='uszydogory@gmail.com'
     script(src="javascripts/hamburger.js")
     script(src="javascripts/offers.js")
     

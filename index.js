@@ -7,7 +7,7 @@ let offerData = {};
 let articleData = {};
 
 /* GET home page. */
-router.get('/', function (req, res, next) {    
+router.get('/', function (req, res, next) {
     // const newOffer = new Offer({
     //     title: 'test',
     //     descritpion: 'test',
@@ -34,9 +34,9 @@ router.get('/', function (req, res, next) {
     });
     
     const articles = Article.find();
-    articles.exec((err, data) => {        
-        articleData = data;                         
-    });    
+    articles.exec((err, data) => {
+        articleData = data;                      
+    });
 
     res.render('index', { title: 'Uszy do góry', offerData, articleData });
 

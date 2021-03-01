@@ -6,8 +6,7 @@ const showOfferIndex = Math.floor(offers.length/2);
 let pressRight = true;
 
 const hideOffers = (offers2 = [], pressRight) => {
-  let positionValue = 110;
-  console.log(pressRight);
+  let positionValue = 110;  
   for(let i = showOfferIndex; i >= 0; i--) {    
     if(i === showOfferIndex) {
       offers2[i].style.cssText = null;      
