@@ -119,8 +119,31 @@ html(lang='pl')
             <a href="tel:+48733863666">666-863-666</a>
           div
             img(src="images/email.png", alt="adres e-mail")
-            p.email='uszydogory@gmail.com'
+            p.email='uszydogory.biuro@gmail.com'
+        .socialmedia
+          p='Znajdziesz nas również na:'
+          .icons    
+            a.facebook(href="https://www.facebook.com/Uszy-Do-G%C3%B3ry-Psie-treningi-i-konsultacje-112340950466891")
+              img(src="images/facebook.svg", alt="facebook")    
+            a.instagram(href="https://www.instagram.com/uszy.dogory/")
+              img(src="images/instagram.svg", alt="instagram") 
+            a.youtube(href="")
+              img(src="images/youtube.svg", alt="youtube")   
+        p.emailinfo='Lub napisz do nas:'
+        .formwrap
+          form
+            input.email(type='text', placeholder='Twój adres e-mail*')
+            input.phonenumber(type='text', placeholder='Numer telefonu (opcjonalnie)')
+            textarea(placeholder='Treść wiadomości*')
+            p
+          button='Wyślij wiadomość'
+      footer
+        .logo
+          img(src="images/logo-mobile.png", alt="logo uszy do góry")
+        p.copyright © 2021 #[span Uszy do góry]
+        a(href="https://www.facebook.com/zuzannarysfoto/")='Zdjęcia Zuzanna Ryś'
     script(src="javascripts/hamburger.js")
     script(src="javascripts/offers.js")
+    script(src="javascripts/form.js")
     
   
