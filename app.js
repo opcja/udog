@@ -10,12 +10,9 @@ var config = require('./config');
 const mongoose = require('mongoose');
 
 mongoose.connect(config.db, {useNewUrlParser: true, useUnifiedTopology: true});
-// const Cat = mongoose.model('Cat', { name: String });
-
-// const kitty = new Cat({ name: 'Zildjian' });
-// kitty.save().then(() => console.log('meow'));
 
 var indexRouter = require('./routes/index');
+var offersRouter = require('./routes/offers');
 
 var app = express();
 
@@ -37,6 +34,7 @@ app.use(function(req, res, next) { // ogarnia aktualny path w routingu
 });
 
 app.use('/', indexRouter);
+app.use('/oferta', offersRouter);
 
 // catch 404 and forward to error handler
  app.use(function(req, res, next) {

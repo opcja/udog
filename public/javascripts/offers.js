@@ -3,9 +3,10 @@ const rightArrow = document.querySelector('.arrow-right');
 const leftArrow = document.querySelector('.arrow-left');
 
 const showOfferIndex = Math.floor(offers.length/2);
-let pressRight = true;
+let touchStart = null;
+let touchEnd = null;
 
-const hideOffers = (offers2 = [], pressRight) => {
+const hideOffers = (offers2 = []) => {
   let positionValue = 110;  
   for(let i = showOfferIndex; i >= 0; i--) {    
     if(i === showOfferIndex) {
@@ -25,14 +26,41 @@ const hideOffers = (offers2 = [], pressRight) => {
     offers2[i].style.opacity = "0";    
     offers2[i].style.transform = `translateX(${positionValue}%)`;    
     positionValue += 100;     
-  }  
+  } 
+  
+  offers[showOfferIndex].addEventListener('touchstart', touchStartFunction, false);  
+  offers[showOfferIndex].addEventListener('touchend', touchEndFunction, false);   
 }
 
-hideOffers(offers, pressRight);
+hideOffers(offers);
+
+function touchStartFunction(e) {
+  touchStart = e.touches[0].clientX;  
+}
+
+function touchEndFunction(e) {
+  touchEnd = e.changedTouches[0].clientX;
+
+  if((touchEnd - touchStart) < -100) {
+    spinOffersLeft();    
+    touchStart = null;
+    touchEnd = null    
+  }
+
+  if((touchEnd - touchStart) > 100) {
+    spinOffersRight();    
+    touchStart = null;
+    touchEnd = null;    
+  } 
+  offers[showOfferIndex].removeEventListener('touchend', touchEndFunction, false);   
+  offers[showOfferIndex].removeEventListener('touchstart', touchStartFunction, false);  
+
+  offers[showOfferIndex].addEventListener('touchstart', touchStartFunction, false);  
+  offers[showOfferIndex].addEventListener('touchend', touchEndFunction, false);   
+}
 
 const spinOffersRight = () => {  
   let arrOffers = [];
-  pressRight = true;
 
   for(let i = 0; i < offers.length; i++) {    
     if(i) {
@@ -42,11 +70,10 @@ const spinOffersRight = () => {
     }
   }    
   offers = arrOffers;
-  hideOffers(arrOffers, pressRight);  
+  hideOffers(arrOffers);  
 }
 
-const spinOffersLeft = () => {
-  pressRight = false;
+const spinOffersLeft = () => {  
   let arrOffers = [];
 
   for(let i = 0; i < offers.length; i++) {    
@@ -59,8 +86,10 @@ const spinOffersLeft = () => {
     }
   }    
   offers = arrOffers;
-  hideOffers(arrOffers, pressRight);
+  hideOffers(arrOffers);
 }
 
 rightArrow.addEventListener('click', spinOffersRight);
 leftArrow.addEventListener('click', spinOffersLeft);
+
+
