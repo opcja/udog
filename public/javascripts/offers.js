@@ -6,14 +6,16 @@ const showOfferIndex = Math.floor(offers.length/2);
 let touchStart = null;
 let touchEnd = null;
 
-const hideOffers = (offers2 = []) => {
+const hideOffers = (offers2 = [], firstTime = true) => {
   let positionValue = 110;  
   for(let i = showOfferIndex; i >= 0; i--) {    
-    if(i === showOfferIndex) {
-      offers2[i].style.cssText = null;      
+    if(i === showOfferIndex) {             
+      offers2[i].style.cssText = null;   
+      if(firstTime) offers[i].style.transition = 'all 0s';
       offers2[i].style.opacity = "100%";      
     } else { 
       offers2[i].style.cssText = null;
+      if(firstTime) offers[i].style.transition = 'all 0s';
       offers2[i].style.opacity = "0";       
       offers2[i].style.transform = `translateX(-${positionValue}%)`;         
       positionValue += 100;
@@ -21,8 +23,9 @@ const hideOffers = (offers2 = []) => {
   }  
   positionValue = 110;
 
-  for(let i = showOfferIndex + 1; i < offers.length; i++) {
+  for(let i = showOfferIndex + 1; i < offers.length; i++) {    
     offers2[i].style.cssText = null;
+    if(firstTime) offers[i].style.transition = 'all 0s';
     offers2[i].style.opacity = "0";    
     offers2[i].style.transform = `translateX(${positionValue}%)`;    
     positionValue += 100;     
@@ -32,7 +35,7 @@ const hideOffers = (offers2 = []) => {
   offers[showOfferIndex].addEventListener('touchend', touchEndFunction, false);   
 }
 
-hideOffers(offers);
+hideOffers(offers, firstTime = true);
 
 function touchStartFunction(e) {
   touchStart = e.touches[0].clientX;  
@@ -70,7 +73,7 @@ const spinOffersRight = () => {
     }
   }    
   offers = arrOffers;
-  hideOffers(arrOffers);  
+  hideOffers(offers, firstTime = false);
 }
 
 const spinOffersLeft = () => {  
@@ -86,7 +89,7 @@ const spinOffersLeft = () => {
     }
   }    
   offers = arrOffers;
-  hideOffers(arrOffers);
+  hideOffers(offers, firstTime = false);
 }
 
 rightArrow.addEventListener('click', spinOffersRight);
