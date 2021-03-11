@@ -2,8 +2,15 @@ var express = require('express');
 var router = express.Router();
 const Offer = require('../models/offer');
 
-router.get('/', function (req, res, next) {  
-  res.render('offers', { title: 'Oferta'});
+let offerData = {};
+
+router.get('/', function (req, res, next) { 
+  const offers = Offer.find();
+  offers.exec((err, data) => {        
+      offerData = data;                      
+  });  
+
+  res.render('offers', { title: 'Uszy do góry - oferta', offerData});
 });
 
 module.exports = router;

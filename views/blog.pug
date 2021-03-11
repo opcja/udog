@@ -23,7 +23,7 @@ html(lang='pl')
     meta(name="keywords", content="psi trener wałcz, psie trenerki wałcz, psie komendy, psi trener")
     meta(name="author", content="Piotr Majda")
     title= title    
-    link(rel='stylesheet', href='stylesheets/offers.css')
+    link(rel='stylesheet', href='stylesheets/blog.css')
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap", rel="stylesheet")    
     link(href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap", rel="stylesheet")
@@ -62,20 +62,16 @@ html(lang='pl')
                 img(src="images/instagram.svg", alt="instagram") 
               a.youtube(href="")
                 img(src="images/youtube.svg", alt="youtube")  
-      section.offers
-        .heading 
-          p Problem #[span z psem] czy<br />#[span pies z] problemami?  
-        p.info Proponujemy Wam treningi dla psów dorosłych oraz szczeniąt. Uczymy zachowań pożądanych, socjalizujemy, pracujemy nad opanowaniem emocji, rozwiązujemy problemy behawioralne.<br />#[span Zapraszamy do zapoznania się z ofertą:]
-        each item in offerData
-          .offer
-            .offerimg
-              img(src=item.imageURL, alt=item.title)
-            h2=item.title
-            .description 
-              p=item.description
-        .arrow-right
-              img(src="images/arrow.png", alt="Następna zakładka")
-        .arrow-left  
-              img(src="images/arrow.png", alt="Poprzednia zakładka")    
-      script(src="javascripts/hamburger.js") 
-      script(src="javascripts/offers.js")         
+      section.blog               
+        h1.title='Blog'
+        each dbarticle in articleData
+          article   
+            img(src=dbarticle.imageURL[0], alt=dbarticle.title)
+            .author   
+              p=dbarticle.author 
+            p.date=`${dbarticle.created.getDate()}.${dbarticle.created.getMonth() < 10 ? "0" + dbarticle.created.getMonth() : dbarticle.created.getMonth()}.${dbarticle.created.getFullYear()}`
+            h2=dbarticle.title
+            .summary
+              p=dbarticle.summary
+            button='Czytaj więcej >'
+      script(src="javascripts/hamburger.js")

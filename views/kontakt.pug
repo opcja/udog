@@ -23,7 +23,7 @@ html(lang='pl')
     meta(name="keywords", content="psi trener wałcz, psie trenerki wałcz, psie komendy, psi trener")
     meta(name="author", content="Piotr Majda")
     title= title    
-    link(rel='stylesheet', href='stylesheets/offers.css')
+    link(rel='stylesheet', href='stylesheets/kontakt.css')
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap", rel="stylesheet")    
     link(href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap", rel="stylesheet")
@@ -62,20 +62,36 @@ html(lang='pl')
                 img(src="images/instagram.svg", alt="instagram") 
               a.youtube(href="")
                 img(src="images/youtube.svg", alt="youtube")  
-      section.offers
-        .heading 
-          p Problem #[span z psem] czy<br />#[span pies z] problemami?  
-        p.info Proponujemy Wam treningi dla psów dorosłych oraz szczeniąt. Uczymy zachowań pożądanych, socjalizujemy, pracujemy nad opanowaniem emocji, rozwiązujemy problemy behawioralne.<br />#[span Zapraszamy do zapoznania się z ofertą:]
-        each item in offerData
-          .offer
-            .offerimg
-              img(src=item.imageURL, alt=item.title)
-            h2=item.title
-            .description 
-              p=item.description
-        .arrow-right
-              img(src="images/arrow.png", alt="Następna zakładka")
-        .arrow-left  
-              img(src="images/arrow.png", alt="Poprzednia zakładka")    
-      script(src="javascripts/hamburger.js") 
-      script(src="javascripts/offers.js")         
+      section.contact
+        h1='Kontakt'
+        .details
+          div 
+            img(src="images/phone.png", alt="numer telefonu")
+            p.name='Ada'
+            <a href="tel:+48733863222">733-863-222</a>
+          div
+            img(src="images/phone.png", alt="numer telefonu")
+            p.name='Dominika'
+            <a href="tel:+48733863666">666-863-666</a>
+          div
+            img(src="images/email.png", alt="adres e-mail")
+            p.email='uszydogory.biuro@gmail.com'
+        .socialmedia
+          p='Znajdziesz nas również na:'
+          .icons    
+            a.facebook(href="https://www.facebook.com/Uszy-Do-G%C3%B3ry-Psie-treningi-i-konsultacje-112340950466891")
+              img(src="images/facebook.svg", alt="facebook")    
+            a.instagram(href="https://www.instagram.com/uszy.dogory/")
+              img(src="images/instagram.svg", alt="instagram") 
+            a.youtube(href="")
+              img(src="images/youtube.svg", alt="youtube")   
+        p.emailinfo='Lub napisz do nas:'
+        .formwrap
+          form
+            input.email(type='text', placeholder='Twój adres e-mail*')
+            input.phonenumber(type='text', placeholder='Numer telefonu (opcjonalnie)')
+            textarea(placeholder='Treść wiadomości*')
+            p
+          button='Wyślij wiadomość'
+      script(src="javascripts/hamburger.js")
+      script(src="javascripts/form.js")

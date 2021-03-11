@@ -13,6 +13,9 @@ mongoose.connect(config.db, {useNewUrlParser: true, useUnifiedTopology: true});
 
 var indexRouter = require('./routes/index');
 var offersRouter = require('./routes/offers');
+var blogRouter = require('./routes/blog');
+var onasRouter = require('./routes/onas');
+var kontaktRouter = require('./routes/kontakt');
 
 var app = express();
 
@@ -35,6 +38,9 @@ app.use(function(req, res, next) { // ogarnia aktualny path w routingu
 
 app.use('/', indexRouter);
 app.use('/oferta', offersRouter);
+app.use('/blog', blogRouter);
+app.use('/onas', onasRouter);
+app.use('/kontakt', kontaktRouter);
 
 // catch 404 and forward to error handler
  app.use(function(req, res, next) {

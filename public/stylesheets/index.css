@@ -5,6 +5,7 @@
 }
 
 main {
+  position: relative;
   margin-top: 30px;
   padding: 0 5%;
   color: #212529;
@@ -583,6 +584,8 @@ section.contact .formwrap p {
 
 footer {
   position: relative;
+  width: 120%;
+  transform: translateX(-10%);
   background-color: #656565;
   height: 200px;
   min-height: 200px;
@@ -592,7 +595,7 @@ footer .logo {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 5%;
+  left: 10%;
   width: 20%;
   height: 41%;
 }
@@ -603,7 +606,7 @@ footer .logo img {
 
 footer p.copyright {
   position: absolute;
-  right: 5%;
+  right: 10%;
   top: 25%;
   color: white;
   text-align: right;
@@ -615,7 +618,7 @@ footer p.copyright span {
 
 footer a {
   position: absolute;
-  right: 5%;
+  right: 10%;
   bottom: 25%;
   text-decoration: none;
   color: white;

@@ -41,13 +41,13 @@ function touchStartFunction(e) {
 function touchEndFunction(e) {
   touchEnd = e.changedTouches[0].clientX;
 
-  if((touchEnd - touchStart) < -100) {
+  if((touchEnd - touchStart) < -250) {
     spinOffersLeft();    
     touchStart = null;
     touchEnd = null    
   }
 
-  if((touchEnd - touchStart) > 100) {
+  if((touchEnd - touchStart) > 250) {
     spinOffersRight();    
     touchStart = null;
     touchEnd = null;    
