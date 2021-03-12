@@ -10,7 +10,8 @@ router.get('/', function (req, res, next) {
       articleData = data;                         
   }); 
 
-  res.render('blog', { title: 'Uszy do góry - Blog', articleData });
+  console.log(res.locals.path);
+  res.render('blog', { title: 'Uszy do góry - Blog', articleData, cssFile: 'stylesheets/blog.css' });
 
 }); 
 

@@ -1,78 +1,17 @@
-html(lang='pl')
-  head
-    link(rel="shortcut icon", href="/favicon.ico")
-    link(rel="icon", sizes="16x16 32x32 64x64", href="/favicon.ico")
-    link(rel="icon", type="image/png", sizes="196x196", href="/favicon-192.png")
-    link(rel="icon", type="image/png", sizes="160x160", href="/favicon-160.png")
-    link(rel="icon", type="image/png", sizes="96x96", href="/favicon-96.png")
-    link(rel="icon", type="image/png", sizes="64x64", href="/favicon-64.png")
-    link(rel="icon", type="image/png", sizes="32x32", href="/favicon-32.png")
-    link(rel="icon", type="image/png", sizes="16x16", href="/favicon-16.png")
-    link(rel="apple-touch-icon", href="/favicon-57.png")
-    link(rel="apple-touch-icon", sizes="114x114", href="/favicon-114.png")
-    link(rel="apple-touch-icon", sizes="144x144", href="/favicon-144.png")
-    link(rel="apple-touch-icon", sizes="60x60", href="/favicon-60.png")
-    link(rel="apple-touch-icon", sizes="120x120", href="/favicon-120.png")
-    link(rel="apple-touch-icon", sizes="76x76", href="/favicon-76.png")
-    link(rel="apple-touch-icon", sizes="152x152", href="/favicon-152.png")
-    link(rel="apple-touch-icon", sizes="180x180", href="/favicon-180.png")
-    meta(name="msapplication-TileColor", content="#FFFFFF")
-    meta(name="msapplication-TileImage", content="/favicon-144.png")
-    meta(name="msapplication-config", content="/browserconfig.xml")
-    meta(name="description", content="Uszy do góry - Psie treningi i konsultacje")
-    meta(name="keywords", content="psi trener wałcz, psie trenerki wałcz, psie komendy, psi trener")
-    meta(name="author", content="Piotr Majda")
-    title= title    
-    link(rel='stylesheet', href='stylesheets/main.css')
-    link(rel='stylesheet', href='stylesheets/blog.css')
-    link(rel="preconnect" href="https://fonts.gstatic.com")
-    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap", rel="stylesheet")    
-    link(href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap", rel="stylesheet")
-    link(href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet")
-  body
-    main
-      .logo   
-        a(href='https://udog.pl')  
-        img(src="images/logo-mobile.png", alt="Strona główna") 
-      button.hamburger 
-        span
-        span
-        span
-      nav             
-        ul
-          li
-            a(href='/')
-              span='Strona główna'                    
-          li 
-            a(href='/oferta')
-              span='Oferta'
-          li 
-            a(href='/blog')
-              span='Blog'
-          li  
-            a(href='/onas')
-              span='O nas'
-          li 
-            a(href='/kontakt')
-              span='Kontakt'
-          .footer
-            .socialmedia  
-              a.facebook(href="https://www.facebook.com/Uszy-Do-G%C3%B3ry-Psie-treningi-i-konsultacje-112340950466891")
-                img(src="images/facebook.svg", alt="facebook")    
-              a.instagram(href="https://www.instagram.com/uszy.dogory/")
-                img(src="images/instagram.svg", alt="instagram") 
-              a.youtube(href="")
-                img(src="images/youtube.svg", alt="youtube")  
-      section.blog               
-        h1.title='Blog'
-        each dbarticle in articleData
-          article   
-            img(src=dbarticle.imageURL[0], alt=dbarticle.title)
-            .author   
-              p=dbarticle.author 
-            p.date=`${dbarticle.created.getDate()}.${dbarticle.created.getMonth() < 10 ? "0" + dbarticle.created.getMonth() : dbarticle.created.getMonth()}.${dbarticle.created.getFullYear()}`
-            h2=dbarticle.title
-            .summary
-              p=dbarticle.summary
-            button='Czytaj więcej >'
-      script(src="javascripts/hamburger.js")
+extends layout
+
+block content
+  section.blog               
+    h1.title='Blog'
+    each dbarticle in articleData
+      article   
+        img(src=dbarticle.imageURL[0], alt=dbarticle.title)
+        .author   
+          p=dbarticle.author 
+        p.date=`${dbarticle.created.getDate()}.${dbarticle.created.getMonth() < 10 ? "0" + dbarticle.created.getMonth() : dbarticle.created.getMonth()}.${dbarticle.created.getFullYear()}`
+        h2=dbarticle.title
+        .summary
+          p=dbarticle.summary
+        button='Czytaj więcej >'
+  script(src="javascripts/hamburger.js")
+

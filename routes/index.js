@@ -39,6 +39,7 @@ router.get('/', function (req, res, next) {
         articleData = data;                         
     });    
 
+    console.log(res.locals.path);
     res.render('index', { title: 'Uszy do góry', offerData, articleData });
 
 });

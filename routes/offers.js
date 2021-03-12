@@ -10,7 +10,8 @@ router.get('/', function (req, res, next) {
       offerData = data;                      
   });  
 
-  res.render('offers', { title: 'Uszy do góry - oferta', offerData});
+  console.log(res.locals.path);
+  res.render('offers', { title: 'Uszy do góry - oferta', offerData, cssFile: 'stylesheets/offers.css'});
 });
 
 module.exports = router;
